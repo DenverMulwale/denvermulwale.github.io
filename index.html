@@ -130,7 +130,67 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0}
 .mmenu a:hover,.mmenu button:hover{background:rgba(34,211,238,.12);color:var(--a)}
 .mmenu i{font-style:normal;width:22px;text-align:center}
 @keyframes zoom{from{transform:scale(.92);opacity:0}}
-@media (max-width:720px){.about{grid-template-columns:1fr;text-align:center}.avatar{margin:0 auto}nav ul{gap:12px;font-size:.82rem}.logo{display:none}nav{justify-content:space-between}}
+/* ---------- responsive ---------- */
+html{-webkit-text-size-adjust:100%}
+.hero{min-height:100svh}
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr))}
+.edu{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.burger{display:none}
+@media (max-width:1024px){
+.wrap{padding:0 26px}
+.about{grid-template-columns:200px 1fr;gap:30px}
+.avatar{width:190px;height:190px}
+section{padding:72px 0}
+}
+@media (max-width:760px){
+nav{gap:10px}
+.logo{margin-right:auto}
+.burger{display:inline-block}
+nav ul{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:8px 14px 14px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.28);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s;font-size:1rem}
+header.open nav ul{opacity:1;visibility:visible;transform:none}
+nav ul a{display:block;padding:13px 10px;border-bottom:1px solid var(--line);border-left:3px solid transparent}
+nav ul li:last-child a{border-bottom:0}
+nav ul a:hover,nav ul a.on{border-bottom-color:var(--line);border-left-color:var(--a)}
+nav ul li:last-child a:hover,nav ul li:last-child a.on{border-bottom-color:transparent}
+.about{grid-template-columns:1fr;text-align:center;gap:26px}
+.avatar{margin:0 auto;width:190px;height:190px}
+.hero{padding:96px 0 56px}
+.sub{margin-bottom:24px}
+.tl{padding-left:24px}
+.job::before{left:-33px}
+}
+@media (max-width:560px){
+.wrap{padding:0 18px}
+section{padding:58px 0}
+.tbtn{width:44px;height:44px}
+.type{font-size:1.05rem}
+.lead{font-size:.97rem}
+.btns{gap:10px}
+.btns .btn{flex:1 1 100%;text-align:center}
+.stats{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}
+.stat{padding:12px 10px;text-align:center}
+.stat b{font-size:1.5rem}
+.stat small{font-size:.74rem;line-height:1.25;display:block}
+.filters{gap:8px}
+.f{padding:8px 15px}
+.shot{height:150px}
+.skills{margin-top:28px;gap:14px}
+.contact{padding:34px 18px;border-radius:18px}
+.mail{display:block;width:100%;flex:1 1 100%}
+.mail .btn{display:block;text-align:center;word-break:break-all}
+.mmenu{left:0;right:0;min-width:0;transform:translateY(6px)}
+.mmenu.on{transform:none}
+.social{gap:16px 20px}
+#top-btn{right:14px;bottom:14px}
+#lb{padding:12px}
+}
+@media (max-width:360px){
+h1{font-size:2rem}
+.stat small{font-size:.68rem}
+}
+@media (hover:none){
+.btn:hover,.stat:hover,.skill:hover{transform:none}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -138,7 +198,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0}
 <div id="bar"></div>
 <header><div class="wrap"><nav>
 <a class="logo" href="#home">DENVAR<i>.</i>MULWALE</a>
-<ul>
+<ul id="menu">
 <li><a href="#about">About</a></li>
 <li><a href="#projects">Projects</a></li>
 <li><a href="#skills">Skills</a></li>
@@ -146,6 +206,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0}
 <li><a href="#contact">Contact</a></li>
 </ul>
 <button class="tbtn" id="theme" type="button" aria-label="Switch between light and dark theme" title="Switch theme"></button>
+<button class="tbtn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
 </nav></div></header>
 
 <main>
@@ -348,6 +409,13 @@ function setTheme(t,save){root.setAttribute('data-theme',t);tb.textContent=t==='
 if(save){try{localStorage.setItem('theme',t)}catch(e){}}}
 setTheme(root.getAttribute('data-theme')||'dark',false);
 tb.onclick=function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark',true)};
+var hd=$('header'),bg=$('#burger');
+function nclose(){hd.classList.remove('open');bg.setAttribute('aria-expanded','false');bg.setAttribute('aria-label','Open menu');bg.innerHTML='&#9776;'}
+bg.onclick=function(e){e.stopPropagation();var o=hd.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.setAttribute('aria-label',o?'Close menu':'Open menu');bg.innerHTML=o?'&#10005;':'&#9776;'};
+$$('nav ul a').forEach(function(a){a.addEventListener('click',nclose)});
+document.addEventListener('click',function(e){if(!hd.contains(e.target))nclose()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')nclose()});
+window.addEventListener('resize',function(){if(innerWidth>760)nclose()});
 var mb=$('#mailbtn'),mm=$('#mmenu');
 function mclose(){mm.classList.remove('on');mb.setAttribute('aria-expanded','false')}
 mb.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var o=mm.classList.toggle('on');mb.setAttribute('aria-expanded',o)});
