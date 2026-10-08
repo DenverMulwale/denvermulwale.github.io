@@ -1,207 +1,202 @@
-<!DOCTYPE HTML>
-<!--
-	Denvar Mulwale
-	denvarmulwale.io | @denvarmulwale
--->
-<html>
-	<head>
-		<title>Denvar Mulwale Portfolio</title>
-		<link rel = "icon" href = "images/Denver Logo.png" 
-        type = "image/x-icon">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denvar Mulwale | Data Analyst Portfolio</title>
+<meta name="description" content="Data analyst and ICT professional in Nairobi. SQL, Power BI, Tableau and Python projects.">
+<meta name="theme-color" content="#0f172a">
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--accent:#2563eb;--accent2:#0ea5e9;--chip:#eff6ff}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--text:#e5e7eb;--muted:#94a3b8;--line:#1e293b;--accent:#60a5fa;--accent2:#38bdf8;--chip:#16233f}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:700;color:var(--text)}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.95rem}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--accent)}
+.hero{padding:84px 0 56px}
+.tag{display:inline-block;background:var(--chip);color:var(--accent);padding:4px 12px;border-radius:99px;font-size:.85rem;font-weight:600;margin-bottom:18px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:16px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:620px;font-size:1.1rem;margin-bottom:28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:11px 22px;border-radius:10px;font-weight:600;border:1px solid var(--accent);display:inline-block}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{opacity:.9}
+.btn.ghost:hover{background:var(--chip)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.stat b{font-size:1.5rem;display:block;color:var(--accent)}
+.stat small{color:var(--muted)}
+section{padding:56px 0}
+h2{font-size:1.7rem;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(15,23,42,.12)}
+.thumb{height:92px;display:flex;align-items:flex-end;padding:12px 16px;color:#fff;font-weight:700;letter-spacing:.3px}
+.t1{background:linear-gradient(135deg,#2563eb,#7c3aed)}
+.t2{background:linear-gradient(135deg,#0ea5e9,#2563eb)}
+.t3{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.t4{background:linear-gradient(135deg,#10b981,#0ea5e9)}
+.t5{background:linear-gradient(135deg,#eab308,#f97316)}
+.t6{background:linear-gradient(135deg,#dc2626,#9333ea)}
+.body{padding:18px;display:flex;flex-direction:column;flex:1}
+.body h3{font-size:1.08rem;margin-bottom:8px}
+.body p{color:var(--muted);font-size:.95rem;flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.chip{background:var(--chip);color:var(--accent);font-size:.78rem;padding:3px 10px;border-radius:99px;font-weight:600}
+.link{font-weight:600;font-size:.95rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.skill h3{font-size:1rem;margin-bottom:10px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px;text-align:center}
+.contact p{color:var(--muted);margin:8px 0 22px}
+.social{display:flex;gap:18px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0}
+@media (max-width:560px){nav ul{gap:14px;font-size:.88rem}.hero{padding-top:56px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<nav>
+<a class="logo" href="#top">Denvar<span>.</span>M</a>
+<ul>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<span class="tag">Data Analyst | ICT Professional</span>
+<h1>Hi, I'm Denvar. I turn <span>raw data</span> into clear decisions.</h1>
+<p class="lead">Nairobi-based analyst with 5+ years in ICT and data work. I clean data in SQL, explore it in Python, and tell the story in Power BI and Tableau.</p>
+<div class="btns">
+<a class="btn primary" href="#projects">View projects</a>
+<a class="btn ghost" href="#contact">Get in touch</a>
+</div>
+<div class="stats">
+<div class="stat"><b>6</b><small>Featured projects</small></div>
+<div class="stat"><b>4</b><small>Core tools: SQL, Python, Power BI, Tableau</small></div>
+<div class="stat"><b>5+</b><small>Years in ICT and data</small></div>
+</div>
+</div>
+</div>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Denvar</strong> <span>Mulwale</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+<section id="projects">
+<div class="wrap">
+<h2>Featured projects</h2>
+<p class="sub">Selected work in data cleaning, exploration and dashboards.</p>
+<div class="grid">
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="actions">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#one">View Projects</a></li>
-							
-						</ul>
-					</nav>
+<article class="card">
+<div class="thumb t1">SQL Server</div>
+<div class="body">
+<h3>Data Cleaning in SQL</h3>
+<p>Transforms raw housing data in SQL Server into a clean, consistent dataset that is ready for analysis.</p>
+<div class="chips"><span class="chip">SQL</span><span class="chip">Data cleaning</span></div>
+<a class="link" href="https://github.com/DenverMulwale/Portfolio_Projects/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" target="_blank" rel="noopener">View queries &rarr;</a>
+</div>
+</article>
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi, my name is Denvar Atulo Mulwale</h1>
-							</header>
-							<h2>ICT Officer | Data Analyst</h2>
-							<div >
-									<p>An Experienced ICT Officer & Data Analyst well versed in SQL, Python, Tableau and Power BI.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button icon solid solo fa-arrow-down scrolly">View Data Projects</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+<article class="card">
+<div class="thumb t2">SQL Server</div>
+<div class="body">
+<h3>COVID-19 Data Exploration</h3>
+<p>Explores global COVID-19 data in SQL Server to find patterns in infections, deaths and vaccinations.</p>
+<div class="chips"><span class="chip">SQL</span><span class="chip">EDA</span></div>
+<a class="link" href="https://github.com/DenverMulwale/Portfolio_Projects/blob/main/Covid19-SQL%20Portfolio%20Project.sql" target="_blank" rel="noopener">View queries &rarr;</a>
+</div>
+</article>
 
-				<!-- Main -->
-					<div id="main">
+<article class="card">
+<div class="thumb t3">Tableau</div>
+<div class="body">
+<h3>Airbnb 2016 Listings</h3>
+<p>An interactive Tableau dashboard that visualises Airbnb 2016 listings.</p>
+<div class="chips"><span class="chip">Tableau</span><span class="chip">Dashboard</span></div>
+<a class="link" href="https://public.tableau.com/app/profile/denvar.mulwale/viz/Airbnb2016ListingProject/Dashboard1" target="_blank" rel="noopener">Open dashboard &rarr;</a>
+</div>
+</article>
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/housing.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://github.com/DenverMulwale/Portfolio_Projects/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" target="_blank" class="link">Data Cleaning In SQL</a></h3>
-										<p>In this project we take raw housing data and transform
-											it in SQL Server to make it more usable for analysis.</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/covid.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://github.com/DenverMulwale/Portfolio_Projects/blob/main/Covid19-SQL%20Portfolio%20Project.sql" target="_blank" class="link">COVID-19 Data Exploration</a></h3>
-										<p>In this project we use SQL Server to explore global COVID 19 data.</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/airbnb.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://public.tableau.com/app/profile/denvar.mulwale/viz/Airbnb2016ListingProject/Dashboard1" target="_blank" class="link">Airbnb 2016 Listing Project</a></h3>
-										<p>In This Project We Visualize Airbnb 2016 Listing in Tableau</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/covid2.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="https://public.tableau.com/app/profile/denvar.mulwale/viz/Covid-19Dashboard_16814522185880/Dashboard1" target="_blank" class="link">Covid-19 Data</a></h3>
-										<p>In This Project We Visualize COVID-19 Numbers in terms of Infections and deaths based on locations in Tableau. </p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/survey.jpg" alt="" />
-									</span>
-									<header class="major">
-											<h3><a href="https://github.com/DenverMulwale/PortfolioProjects/tree/main/Data%20Profession%20Survey%20_2022" target="_blank" class="link">PowerBI:Data Professional Survey 2022 </a></h3>
-												
-										<p>In This Project, we visualize the data and responses of survey done by different professionals</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/PwC_logo_PNG2.png" alt="" />
-									</span>
-									<header class="major">
-											<h3><a href="https://github.com/DenverMulwale/PwC_VirtualInternship" target="_blank" class="link">PowerBI:PwC Virtual Internship Project </a></h3>
-												
-										<p>In This Project, we visualize call center data trends on behalf of centre manager, analyse and visualize customer retension: Customer demographics and insights.
-											We also Prepare dashboard for HR on Diversity & Inclusion, data which will help them on how to improve Gender balance at the executive level
-										</p>
-									</header>
-								</article>
+<article class="card">
+<div class="thumb t4">Tableau</div>
+<div class="body">
+<h3>COVID-19 Dashboard</h3>
+<p>Shows infections and deaths by location in an interactive Tableau dashboard.</p>
+<div class="chips"><span class="chip">Tableau</span><span class="chip">Visualisation</span></div>
+<a class="link" href="https://public.tableau.com/app/profile/denvar.mulwale/viz/Covid-19Dashboard_16814522185880/Dashboard1" target="_blank" rel="noopener">Open dashboard &rarr;</a>
+</div>
+</article>
 
+<article class="card">
+<div class="thumb t5">Power BI</div>
+<div class="body">
+<h3>Data Professional Survey 2022</h3>
+<p>Visualises the responses of data professionals from a 2022 survey.</p>
+<div class="chips"><span class="chip">Power BI</span><span class="chip">Survey analysis</span></div>
+<a class="link" href="https://github.com/DenverMulwale/PortfolioProjects/tree/main/Data%20Profession%20Survey%20_2022" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+</article>
 
-								<!--To Be Removed-->
-								<!--<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							    -->
-							</section>
+<article class="card">
+<div class="thumb t6">Power BI</div>
+<div class="body">
+<h3>PwC Virtual Internship</h3>
+<p>Call centre trend and customer retention dashboards for a centre manager, plus an HR dashboard on diversity and gender balance at executive level.</p>
+<div class="chips"><span class="chip">Power BI</span><span class="chip">HR analytics</span></div>
+<a class="link" href="https://github.com/DenverMulwale/PwC_VirtualInternship" target="_blank" rel="noopener">View project &rarr;</a>
+</div>
+</article>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Denvar Mulwale</h2>
-									</header>
-									<p>An Experienced ICT Officer & Data Analyst well versed in SQL, Python, Tableau and Power BI.</p>
-									<ul class="actions">
-										<li><a href="#one" class="button icon solid solo fa-arrow-up scrolly">View Data Projects</a></li>
-									</ul>
-								</div>
-							</section>
+</div>
+</div>
+</section>
 
-					</div>
+<section id="skills">
+<div class="wrap">
+<h2>Skills</h2>
+<p class="sub">Tools I use to clean, analyse and present data.</p>
+<div class="skills">
+<div class="skill"><h3>Analysis</h3><div class="chips"><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Excel</span></div></div>
+<div class="skill"><h3>Visualisation</h3><div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau</span></div></div>
+<div class="skill"><h3>Data collection</h3><div class="chips"><span class="chip">SPSS</span><span class="chip">ODK</span><span class="chip">CSPro</span></div></div>
+<div class="skill"><h3>Background</h3><div class="chips"><span class="chip">ICT support</span><span class="chip">SLA reporting</span><span class="chip">Documentation</span></div></div>
+</div>
+</div>
+</section>
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							
-						</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">denvermulwale@gmail.com</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>+254713980209</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>Nairobi<br />
-								
-										Kenya</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+<section id="contact">
+<div class="wrap">
+<div class="contact">
+<h2>Let's work together</h2>
+<p>Open to data analytics and ICT opportunities. Send me a message.</p>
+<a class="btn primary" href="mailto:denvermulwale@gmail.com">denvermulwale@gmail.com</a>
+<div class="social">
+<a href="https://github.com/DenverMulwale" target="_blank" rel="noopener">GitHub</a>
+<a href="https://www.linkedin.com/in/denvar-mulwale-1b960a99/" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://public.tableau.com/app/profile/denvar.mulwale" target="_blank" rel="noopener">Tableau Public</a>
+<a href="https://twitter.com/DenverWRIGHT_md" target="_blank" rel="noopener">Twitter</a>
+</div>
+</div>
+</div>
+</section>
+</main>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="https://twitter.com/DenverWRIGHT_md" target="_blank" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="https://github.com/DenverMulwale" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="https://www.linkedin.com/in/denvar-mulwale-1b960a99/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Denvar Mulwale 2023</li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<footer>&copy; <span id="y">2026</span> Denvar Atulo Mulwale | Nairobi, Kenya</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
 </html>
