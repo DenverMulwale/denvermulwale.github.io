@@ -123,6 +123,12 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0}
 #lb{position:fixed;inset:0;background:rgba(3,6,12,.92);display:none;align-items:center;justify-content:center;z-index:30;cursor:zoom-out;padding:24px}
 #lb.on{display:flex}
 #lb img{max-width:100%;max-height:90vh;border-radius:12px;animation:zoom .25s}
+.mail{position:relative;display:inline-block}
+.mmenu{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%) translateY(6px);min-width:250px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:0 18px 50px rgba(0,0,0,.35);opacity:0;visibility:hidden;transition:.2s;z-index:12;text-align:left}
+.mmenu.on{opacity:1;visibility:visible;transform:translateX(-50%)}
+.mmenu a,.mmenu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:9px;border:0;background:transparent;color:var(--text);font:inherit;font-size:.92rem;cursor:pointer;text-align:left}
+.mmenu a:hover,.mmenu button:hover{background:rgba(34,211,238,.12);color:var(--a)}
+.mmenu i{font-style:normal;width:22px;text-align:center}
 @keyframes zoom{from{transform:scale(.92);opacity:0}}
 @media (max-width:720px){.about{grid-template-columns:1fr;text-align:center}.avatar{margin:0 auto}nav ul{gap:12px;font-size:.82rem}.logo{display:none}nav{justify-content:space-between}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -278,7 +284,15 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:34px 0}
 <h2>Let's work together</h2>
 <p>Open to data analytics and ICT opportunities. Send me a message or grab my CV.</p>
 <div class="btns">
-<a class="btn p" href="mailto:denvermulwale@gmail.com">denvermulwale@gmail.com</a>
+<div class="mail">
+<a class="btn p" id="mailbtn" href="mailto:denvermulwale@gmail.com?subject=Hello%20Denvar" aria-haspopup="true" aria-expanded="false">denvermulwale@gmail.com</a>
+<div class="mmenu" id="mmenu" role="menu">
+<a role="menuitem" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=denvermulwale@gmail.com&amp;su=Hello%20Denvar"><i>&#9993;</i>Write in Gmail</a>
+<a role="menuitem" target="_blank" rel="noopener" href="https://outlook.office.com/mail/deeplink/compose?to=denvermulwale@gmail.com&amp;subject=Hello%20Denvar"><i>&#9993;</i>Write in Outlook</a>
+<a role="menuitem" href="mailto:denvermulwale@gmail.com?subject=Hello%20Denvar"><i>&#128231;</i>Open default email app</a>
+<button type="button" id="copymail" role="menuitem"><i>&#10697;</i><span>Copy email address</span></button>
+</div>
+</div>
 <a class="btn" href="Denvar_Mulwale_CV.pdf" download>Download CV</a>
 </div>
 <div class="social">
@@ -334,6 +348,16 @@ function setTheme(t,save){root.setAttribute('data-theme',t);tb.textContent=t==='
 if(save){try{localStorage.setItem('theme',t)}catch(e){}}}
 setTheme(root.getAttribute('data-theme')||'dark',false);
 tb.onclick=function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark',true)};
+var mb=$('#mailbtn'),mm=$('#mmenu');
+function mclose(){mm.classList.remove('on');mb.setAttribute('aria-expanded','false')}
+mb.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var o=mm.classList.toggle('on');mb.setAttribute('aria-expanded',o)});
+document.addEventListener('click',function(e){if(!mm.contains(e.target))mclose()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')mclose()});
+$$('a',mm).forEach(function(a){a.addEventListener('click',function(){setTimeout(mclose,100)})});
+$('#copymail').onclick=function(){var b=this,t=$('span',b),addr='denvermulwale@gmail.com';
+function done(){t.textContent='Copied!';setTimeout(function(){t.textContent='Copy email address';mclose()},1200)}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done,done)}
+else{var x=document.createElement('textarea');x.value=addr;document.body.appendChild(x);x.select();try{document.execCommand('copy')}catch(e){}x.remove();done()}};
 var av=$('#avatar'),avt=setInterval(function(){av.classList.toggle('swap')},4500);
 av.onclick=function(){av.classList.toggle('swap');clearInterval(avt)};
 })();
